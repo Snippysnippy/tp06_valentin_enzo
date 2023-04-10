@@ -1,0 +1,20 @@
+<div class="recap">
+    <h2>
+        Récapitulatif des informations saisies
+    </h2>
+
+    <h3>{{ login }} :  {{ civilite }} {{ nom | uppercase }} {{ prenom }}</h3>
+
+    <p>Adresse complète : {{ adresse }}, {{ cp }} {{ ville }}, {{ pays }}</p>
+
+    <h3>Contacts</h3>
+    <ul>
+        <li>
+            Téléphone : {{ tel | phoneNumber }}
+        </li>
+        <li>
+            Email : {{ email }}
+        </li>
+    </ul>
+
+</div>

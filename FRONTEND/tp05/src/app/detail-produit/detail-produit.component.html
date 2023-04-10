@@ -1,0 +1,17 @@
+<div class="container mt-5 pt-4 text-center">
+  <h1>Détails du produit</h1>
+
+  <div class="card">
+    <!-- <img [src]="produit.image" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title">{{ produit.name }}</h5>
+      <p class="card-text">{{ produit.description }}</p>
+      <p class="card-text">{{ produit.price }} €</p>
+      <button (click)="ajouterAuPanier()" class="btn btn-primary">Ajouter au panier</button>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a routerLink="/catalogue" class="btn btn-primary">Retour</a>
+  </div>
+</div>
+

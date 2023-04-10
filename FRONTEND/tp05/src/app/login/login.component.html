@@ -1,0 +1,31 @@
+<div class="container mt-5 pt-4">
+    <h2>Connexion</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" formControlName="email" />
+        <div *ngIf="f['email']['errors'] && (submitted || f['email']['touched'])">
+        <div *ngIf="f['email']['errors']['required']">L'email est requis</div>
+        <div *ngIf="f['email']['errors']['email']">L'email n'est pas valide</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        />
+        <div *ngIf="f['password']['errors'] && (submitted || f['password']['touched'])">
+        <div *ngIf="f['password']['errors']['required']">
+            Le mot de passe est requis
+        </div>
+        <div *ngIf="f['password']['errors']['minlength']">
+            Le mot de passe doit contenir au moins 6 caractères
+        </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+</div>
+  

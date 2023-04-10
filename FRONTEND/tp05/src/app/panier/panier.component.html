@@ -1,0 +1,19 @@
+<div class="container mt-5 pt-4 text-center">
+    <h2 class="mt-4">Panier</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let produit of produitsPanier$ | async">
+        <div class="row align-items-center">
+          <!-- <div class="col-sm-3">
+            <img [src]="produit.imageUrl" [alt]="produit.name" class="img-thumbnail" />
+          </div> -->
+          <div class="col-sm-7">
+            <h5>{{ produit.name }}</h5>
+            <p>{{ produit.description }}</p>
+          </div>
+          <div class="col-sm-2">
+            <p class="text-end">{{ produit.price | currency }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+</div>

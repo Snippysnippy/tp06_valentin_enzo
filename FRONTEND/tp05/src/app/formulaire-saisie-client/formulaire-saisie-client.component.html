@@ -1,0 +1,73 @@
+<div class="formulaire">
+
+    <div class="champ">
+        <label for="civilite">Civilité</label>
+        <input id="civilite" [appError]="getValidationCivilite ()" [(ngModel)]="civilite"> 
+    </div>
+
+    <div class="champ">
+        <label for="nom">Nom</label>
+        <input id="nom" [appError]="getValidationNom ()" [(ngModel)]="nom">  
+    </div>
+
+    <div class="champ">
+        <label for="prenom">Prénom</label>
+        <input id="prenom" [appError]="getValidationPrenom ()" [(ngModel)]="prenom">
+    </div>
+
+    <div class="champ">
+        <label for="adresse">Adresse</label>
+        <input id="adresse" [appError]="getValidationAdresse ()" [(ngModel)]="adresse">
+    </div>
+
+    <div class="champ">
+        <label for="cp">Code Postal</label>
+        <input id="cp" [appError]="getValidationCodePostal ()" [(ngModel)]="cp">
+    </div>
+
+    <div class="champ">
+        <label for="ville">Ville</label>
+        <input id="ville" [appError]="getValidationVille ()" [(ngModel)]="ville">
+    </div>
+
+    <div class="champ">
+        <label for="pays">Pays</label>
+        <input id="pays" [appError]="getValidationPays ()" [(ngModel)]="pays"> 
+    </div>
+
+    <div class="champ">
+        <label for="tel">Téléphone</label>
+        <input id="tel" [appError]="getValidationTel ()" [(ngModel)]="tel">
+    </div>
+
+    <div class="champ">
+        <label for="email">Adresse mail</label>
+        <input id="email" [appError]="getValidationEmail ()" [(ngModel)]="email"> 
+    </div>
+
+    <div class="champ">
+        <label for="login">Login</label>
+        <input id="login" [appError]="getValidationLogin ()" [(ngModel)]="login">
+    </div>
+
+    <div class="champ">
+        <label for="password">Mot de passe</label>
+        <input id="password" [appError]="getValidationPassword ()" [(ngModel)]="password">
+    </div>
+
+    <button (click)="sendData()">Valider</button>
+    
+</div>
+
+<hr/>
+
+<ng-container *ngIf="recap ; recap">
+    <app-recap-saisie-client 
+    [civilite]="civilite" recap [nom]="nom" [prenom]="prenom" 
+    [adresse]="adresse" [cp]="cp" [ville]="ville" [pays]="pays"
+    [tel]="tel" [email]="email" 
+    [login]="login" [password]="password"
+     (recap)="changeRecap($event)">
+    </app-recap-saisie-client>
+</ng-container>
+

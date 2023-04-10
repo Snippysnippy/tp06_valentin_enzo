@@ -1,0 +1,16 @@
+<div class="container mt-5 pt-4">
+    <div class="form-group row">
+        <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Rechercher un produit">
+        <div class="col-3 mt-2" *ngFor="let product of filteredProducts$ | async">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">{{ product.price }} €</h6>
+            <button [routerLink]="['/produits', product.id]" class="btn btn-primary">Voir le détail</button>
+            <button class="btn btn-secondary" (click)="ajouterArticle(product)">Ajouter</button>
+            <button class="btn btn-primary" [disabled]="true">Acheter</button>
+          </div>
+        </div>
+    </div>
+</div>
