@@ -1,6 +1,6 @@
 {
     "/api/*": {
-      "target": "https://tp05-valentin-enzo.onrender.com/",
+      "target": "https://tp06-valentin-enzo.onrender.com/",
       "secure": false,
       "logLevel": "debug",
       "changeOrigin": true
