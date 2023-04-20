@@ -24,13 +24,6 @@ export class CatalogueComponent implements OnInit {
   }
 
   ngOnInit() {
-    //TP3-02
-    // this.service.getCatalogue().subscribe(data => {
-    //   this.products = data;
-    //   this.filteredProducts = this.products;
-    // });
-
-    //TP3-03
     this.service.getProduits().subscribe(data => {
       this.products = data;
       this.filteredProducts = this.products;
@@ -43,9 +36,11 @@ export class CatalogueComponent implements OnInit {
       )
       .subscribe(value => {
         if(value) {
-          this.filteredProducts = this.products.filter(product =>
-            product.name.toLowerCase().includes(value.toLowerCase())
-          );
+          this.service.getProduitsWithFilter(value).subscribe(data => {
+            this.filteredProducts = data;
+          });
+        } else {
+          this.filteredProducts = this.products;
         }
       });
   }

@@ -1,7 +1,7 @@
 <div class="container mt-5 pt-4">
   <div class="form-group row">
-      <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Rechercher un produit">
-      <div class="col-3 mt-2" *ngFor="let product of products | filter:searchTerm">
+    <input type="text" class="form-control" [formControl]="searchControl" placeholder="Rechercher un produit">
+    <div class="col-3 mt-2" *ngFor="let product of filteredProducts">
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
@@ -12,5 +12,6 @@
           <button class="btn btn-primary" [disabled]="true">Acheter</button>
         </div>
       </div>
+    </div>
   </div>
 </div>
